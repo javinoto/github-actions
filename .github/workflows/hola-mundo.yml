@@ -11,5 +11,5 @@ jobs:                                           # This workflow contains a singl
       - name: Define variable
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Run python script
-        run: python hola_mundo.py
+        run: python hello_world.py
           
