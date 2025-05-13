@@ -6,7 +6,7 @@ jobs:                                           # This workflow contains a singl
   hola-mundo:                                   # Job name
     runs-on: ubuntu-latest                      # The type of runner that the job will run on
     steps:
-      - name: Checkout repo's code into the runner
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Define variable
         run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
