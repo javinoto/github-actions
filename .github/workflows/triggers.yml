@@ -1,0 +1,26 @@
+name: Triggers en Github Actions
+run-name: Ejecución de multiples triggers
+on:
+    push:
+        branches:
+            - main
+            - aprendiendo-github-actions
+    pull_request:
+        paths:
+            - '**.yml'
+            - '**.py'
+    schedule:
+        - cron: 0 12 * * *
+     
+
+jobs:
+    triggers:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Define variable
+              run:  echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+            - name: Run python script
+              run:  python hello_world.py
+              
