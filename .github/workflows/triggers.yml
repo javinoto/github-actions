@@ -1,4 +1,4 @@
-name: Triggers en Github Actions
+name: 01_Triggers en Github Actions
 run-name: Ejecución de multiples triggers
 on:
     push:
@@ -23,4 +23,3 @@ jobs:
               run:  echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
             - name: Run python script
               run:  python hello_world.py
-              
