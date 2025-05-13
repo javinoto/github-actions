@@ -1,0 +1,15 @@
+name: 00_Aprendiendo GitHub Actions
+run-name: ¡Estoy aprendiendo github actions!
+on: [push]                                      # Controls when the workflow will run
+                                                # This workflow works when make a push to any branch
+jobs:                                           # This workflow contains a single job called "build"
+  hola-mundo:                                   # Job name
+    runs-on: ubuntu-latest                      # The type of runner that the job will run on
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Define variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: Run python script
+        run: python hello_world.py
+          
